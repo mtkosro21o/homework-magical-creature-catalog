@@ -52,14 +52,20 @@ let creatureCatalog = [
     Creature(name: "Phoenix", description: "Attack with the wings", isGood: true, magicPower: 9)
 ]
 
-func describeCreatureInteractions(creatures: [Creature]) {
+func describeCreature(creatures: [Creature]) {
     for i in 0..<creatures.count {
+        let creature = creatures[i]
+        print(creature.name)
+        print(creature.description)
+        print(creature.isGood)
+        print(creature.magicPower)
+        print(creature.ability)
+        
         for j in i + 1..<creatures.count {
-            let creature1 = creatures[i]
             let creature2 = creatures[j]
-            creature1.interactWith(creature2)
+            creature.interactWith(creature2)
         }
     }
 }
 
-describeCreatureInteractions(creatures: creatureCatalog)
+describeCreature(creatures: creatureCatalog)
